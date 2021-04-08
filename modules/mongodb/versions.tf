@@ -2,12 +2,12 @@ terraform {
   required_version = ">= 0.14"
 
   required_providers {
-    google = {
+    helm = {
       source  = "hashicorp/helm"
       version = "2.1"
     }
 
-    vault = {
+    random = {
       source  = "hashicorp/random"
       version = "3.1.0"
     }

@@ -1,21 +1,25 @@
 variable "name" {
-  type    = string
-  default = "mongodb"
+  type        = string
+  description = "Release name"
+  default     = "mongodb"
 }
 
 variable "namespace" {
-  type    = string
-  default = "db"
+  type        = string
+  description = "(Optional) The namespace to install the release into. Defaults to default."
+  default     = "db"
 }
 
 variable "repository" {
-  type    = string
-  default = "https://charts.bitnami.com/bitnami"
+  type        = string
+  description = "Repository URL where to locate the requested chart."
+  default     = "https://charts.bitnami.com/bitnami"
 }
 
 variable "chart" {
-  type    = string
-  default = "mongodb"
+  type        = string
+  description = "Chart name to be installed."
+  default     = "mongodb"
 }
 
 variable "set" {
@@ -31,11 +35,13 @@ variable "set_sensitive" {
 }
 
 variable "chart_version" {
-  type = string
-  default = "10.12.1"
+  type        = string
+  description = "version - (Optional) Specify the exact chart version to install. If this is not specified, the latest version is installed."
+  default     = "10.12.1"
 }
 
 variable "create_namespace" {
-  type = bool
-  default = "true"
+  type        = bool
+  description = "(Optional) Create the namespace if it does not yet exist. Defaults to true"
+  default     = "true"
 }
