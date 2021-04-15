@@ -55,6 +55,6 @@ resource "random_password" "user_password" {
 
 resource "random_password" "replica_set_key" {
   length           = 16
-  special          = true
+  special          = false
   override_special = "_%@"
 }
