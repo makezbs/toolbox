@@ -45,3 +45,9 @@ variable "create_namespace" {
   description = "(Optional) Create the namespace if it does not yet exist. Defaults to true"
   default     = "true"
 }
+
+variable "values_file" {
+  type        = string
+  description = "List of values in raw yaml to pass to helm. Values will be merged, in order, as Helm does with multiple -f options."
+  default     = "values.yaml"
+}

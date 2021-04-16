@@ -19,6 +19,10 @@ resource "helm_release" "this" {
   repository = var.repository
   chart      = var.chart
 
+  values = [
+    coalesce(fileexists(var.values_file) ? file(var.values_file) : "", file("${path.module}/values.yaml"))
+  ]
+
   dynamic "set" {
     for_each = merge(local.set)
 
