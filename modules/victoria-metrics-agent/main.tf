@@ -4,7 +4,7 @@ locals {
     "rbac.create"               = "true",
     "rbac.pspEnabled"           = "true",
     "resources.limits.memory"   = "2048Mi",
-    "resources.requests.cpu"    = "200",
+    "resources.requests.cpu"    = "200m",
     "resources.requests.memory" = "512Mi",
   }
 }
