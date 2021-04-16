@@ -12,9 +12,4 @@ terraform {
       version = "3.1.0"
     }
   }
-
-}
-
-provider "helm" {
-  # export KUBE_CONFIG_PATHS=
 }

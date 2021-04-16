@@ -23,7 +23,7 @@ resource "helm_release" "this" {
   chart      = var.chart
 
   dynamic "set" {
-    for_each = merge(local.set)
+    for_each = local.set
 
     content {
       name  = set.key
@@ -32,7 +32,7 @@ resource "helm_release" "this" {
   }
 
   dynamic "set_sensitive" {
-    for_each = merge(local.set_sensitive)
+    for_each = local.set_sensitive
 
     content {
       name  = set_sensitive.key
