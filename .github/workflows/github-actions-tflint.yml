@@ -1,4 +1,4 @@
-name: Lint
+name: TFLint pipeline
 on:
   push:
     branches: [ main ]
@@ -10,7 +10,7 @@ jobs:
 
     strategy:
       matrix:
-        os: [ubuntu-latest, macos-latest, windows-latest]
+        os: [ubuntu-latest]
 
     steps:
     - uses: actions/checkout@v1
@@ -25,4 +25,6 @@ jobs:
       run: tflint --version
 
     - name: Run TFLint
-      run: tflint -f compact
+      run: |
+        find ./ -type f -name "*.tf" -exec dirname {} \; | sort -u | while read m; \
+        do (cd "$m" && echo "$m" && tflint -f compact -c ${GITHUB_WORKSPACE}/.github/workflows/.tflint.hcl); done

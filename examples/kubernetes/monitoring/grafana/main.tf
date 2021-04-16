@@ -1,5 +1,6 @@
 variable "smtp_password" {
   type = string
+  description = "SMTP Password"
 }
 
 module "grafana" {

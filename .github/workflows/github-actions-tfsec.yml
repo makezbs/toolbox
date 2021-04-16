@@ -1,0 +1,30 @@
+name: TFSec pipeline
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+
+jobs:
+  tfsec:
+    runs-on: ${{ matrix.os }}
+
+    strategy:
+      matrix:
+        os: [ubuntu-latest]
+
+    steps:
+    - uses: actions/checkout@v1
+      name: Checkout source code
+
+    - uses: actions/setup-go@v2
+      with:
+        stable: 'true'
+    - run: go get -u github.com/tfsec/tfsec/cmd/tfsec
+
+    - name: Show version
+      run: /home/runner/go/bin/tfsec --version
+
+    - name: Run TFSec
+      run: |
+        find ./modules -type f -name "*.tf" -exec dirname {} \; | sort -u | while read m; \
+        do (cd "$m" && echo "$m" && /home/runner/go/bin/tfsec ); done
