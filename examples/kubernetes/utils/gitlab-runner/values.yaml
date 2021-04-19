@@ -1,0 +1,4 @@
+fullnameOverride: gitlab-runner
+gitlabUrl: https://gitlab.example.com/
+concurrent: 3
+checkInterval: 30
