@@ -26,5 +26,5 @@ jobs:
 
     - name: Run TFLint
       run: |
-        find ./ -type f -name "*.tf" -exec dirname {} \; | sort -u | while read m; \
+        find ./modules -type f -name "*.tf" -exec dirname {} \; | sort -u | while read m; \
         do (cd "$m" && echo "$m" && tflint -f compact -c ${GITHUB_WORKSPACE}/.github/workflows/.tflint.hcl); done
