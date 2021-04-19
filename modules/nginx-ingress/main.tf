@@ -1,12 +1,7 @@
 locals {
   set = merge(local.set_defaults, var.set)
   set_defaults = {
-    "concurrent"    = "3",
-    "checkInterval" = "30",
-  }
-  set_sensitive = merge(local.set_sensitive_defaults, var.set_sensitive)
-  set_sensitive_defaults = {
-    "foo" = "bar",
+    "kind" = "Deployment",
   }
 }
 
@@ -29,15 +24,6 @@ resource "helm_release" "this" {
     content {
       name  = set.key
       value = set.value
-    }
-  }
-
-  dynamic "set_sensitive" {
-    for_each = merge(local.set_sensitive)
-
-    content {
-      name  = set_sensitive.key
-      value = set_sensitive.value
     }
   }
 }
