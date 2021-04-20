@@ -1,5 +1,5 @@
 variable "smtp_password" {
-  type = string
+  type        = string
   description = "SMTP Password"
 }
 

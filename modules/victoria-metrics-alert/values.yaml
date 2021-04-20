@@ -1,0 +1,19 @@
+# https://github.com/VictoriaMetrics/helm-charts/blob/master/charts/victoria-metrics-alert/values.yaml
+
+rbac:
+  create: true
+
+server:
+  config:
+    alerts:
+      groups:
+        - name: "Self monitoring"
+          rules:
+          - alert: "TargetMissing"
+            expr: "up == 0"
+            for: "0m"
+            labels:
+              severity: "critical"
+            annotations:
+              summary: "Target missing (instance {{ $labels.instance }})"
+              description: "A target has disappeared. An exporter might be crashed.\n  VALUE = {{ $value }}\n  LABELS: {{ $labels }}"

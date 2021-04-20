@@ -1,0 +1,4 @@
+# https://github.com/bitnami/charts/blob/master/bitnami/metrics-server/values.yaml
+
+rbac:
+  create: true

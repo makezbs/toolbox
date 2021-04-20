@@ -1,0 +1,57 @@
+alertmanager:
+  enabled: true
+  retention: 120h
+  config:
+    global:
+      resolve_timeout: 60m
+    route:
+      group_by: ['job']
+      group_wait: 10s
+      group_interval: 1m
+      repeat_interval: 12h
+      receiver: 'slack'
+      routes:
+        - continue: true
+          group_wait: 10s
+          match_re:
+            channel: infra
+          receiver: slack
+    receivers:
+      - name: slack
+        slack_configs:
+          - api_url: https://hooks.slack.com/services/XXXXXXXX/XXXXXXXXXX/XXXXXXXXXXXXXXXXXXX
+            channel: alerts-dev
+            send_resolved: true
+            username: '{{ template "slack.default.username" . }}'
+            color: '{{ if eq .Status "firing" }}danger{{ else }}good{{ end }}'
+            title: '{{ template "slack.default.title" . }}'
+            title_link: '{{ template "slack.default.titlelink" . }}'
+            pretext: '{{ .CommonAnnotations.summary }}'
+            text: |-
+              {{ range .Alerts }}
+                *Alert:* {{ .Annotations.summary }} - `{{ .Labels.severity }}`
+                *Description:* {{ .Annotations.description }}
+                *Details:*
+                {{ range .Labels.SortedPairs }} • *{{ .Name }}:* `{{ .Value }}`
+                {{ end }}
+              {{ end }}
+            fallback: '{{ template "slack.default.fallback" . }}'
+            icon_emoji: '{{ template "slack.default.iconemoji" . }}'
+            icon_url: '{{ template "slack.default.iconurl" . }}'
+    templates:
+      - '/etc/alertmanager/config/*.tmpl'
+
+server:
+  config:
+    alerts:
+      groups:
+        - name: "Self monitoring"
+          rules:
+          - alert: "TargetMissing"
+            expr: "up == 0"
+            for: "0m"
+            labels:
+              severity: "critical"
+            annotations:
+              summary: "Target missing (instance {{ $labels.instance }})"
+              description: "A target has disappeared. An exporter might be crashed.\n  VALUE = {{ $value }}\n  LABELS: {{ $labels }}"

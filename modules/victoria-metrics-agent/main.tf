@@ -1,11 +1,14 @@
 locals {
   set = merge(local.set_defaults, var.set)
   set_defaults = {
-    "rbac.create"               = "true",
-    "rbac.pspEnabled"           = "true",
-    "resources.limits.memory"   = "2048Mi",
-    "resources.requests.cpu"    = "200m",
-    "resources.requests.memory" = "512Mi",
+    "server.fullnameOverride"                                    = "victoria-metrics-agent",
+    "extraArgs.promscrape\\.suppressDuplicateScrapeTargetErrors" = "true",
+    "rbac.create"                                                = "true",
+    "rbac.pspEnabled"                                            = "true",
+    "resources.limits.memory"                                    = "2048Mi",
+    "resources.requests.cpu"                                     = "200m",
+    "resources.requests.memory"                                  = "512Mi",
+
   }
 }
 

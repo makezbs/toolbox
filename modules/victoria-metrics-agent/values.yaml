@@ -1,3 +1,4 @@
+# https://github.com/VictoriaMetrics/helm-charts/blob/master/charts/victoria-metrics-agent/values.yaml
 config:
   global:
     scrape_interval: 10s

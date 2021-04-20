@@ -1,12 +1,18 @@
 locals {
   set = merge(local.set_defaults, var.set)
   set_defaults = {
-    "fullnameOverride"   = "loki-stack",
-    "fluent-bit.enabled" = "false",
-    "grafana.enabled"    = "false",
-    "prometheus.enabled" = "false",
-    "filebeat.enabled"   = "false",
-    "logstash.enabled"   = "false",
+    "fullnameOverride"                   = "loki-stack",
+    "fluent-bit.enabled"                 = "false",
+    "grafana.enabled"                    = "false",
+    "prometheus.enabled"                 = "false",
+    "filebeat.enabled"                   = "false",
+    "logstash.enabled"                   = "false",
+    "promtail.resources.limits.memory"   = "256Mi"
+    "promtail.resources.requests.cpu"    = "100m"
+    "promtail.resources.requests.memory" = "128Mi"
+    "loki.resources.limits.memory"       = "512Mi"
+    "loki.resources.requests.cpu"        = "100m"
+    "loki.resources.requests.memory"     = "256Mi"
   }
   aws_enabled = length(var.aws_access_key_id) > "0" ? true : false
 }
