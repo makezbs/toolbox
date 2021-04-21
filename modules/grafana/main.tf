@@ -1,8 +1,11 @@
 locals {
   set = merge(local.set_defaults, var.set)
   set_defaults = {
-    "persistence.enabled" = "true",
-    "persistence.size"    = "10Gi",
+    "persistence.enabled"       = "true",
+    "persistence.size"          = "10Gi",
+    "resources.limits.memory"   = "256Mi",
+    "resources.requests.cpu"    = "50m",
+    "resources.requests.memory" = "128Mi",
   }
   set_sensitive = merge(local.set_sensitive_defaults, var.set_sensitive)
   set_sensitive_defaults = {
