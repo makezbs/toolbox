@@ -1,6 +1,5 @@
 module "cert-manager" {
-  # source = "github.com/makezbs/toolbox/modules/cert-manager"
-  source = "../../../../modules/cert-manager"
+  source = "git::https://github.com/makezbs/toolbox.git//modules/cert-manager?ref=v0.1.0"
 
   name      = basename(path.cwd)
   namespace = "cert-manager"

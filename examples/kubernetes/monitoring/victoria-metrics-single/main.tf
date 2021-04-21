@@ -1,6 +1,5 @@
 module "victoria_metrics_single" {
-  # source = "github.com/makezbs/toolbox/modules/victoria-metrics-single"
-  source = "../../../../modules/victoria-metrics-single"
+  source = "git::https://github.com/makezbs/toolbox.git//modules/victoria-metrics-single?ref=v0.1.0"
 
   name      = basename(path.cwd)
   namespace = "monitoring"

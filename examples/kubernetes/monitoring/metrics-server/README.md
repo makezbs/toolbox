@@ -6,8 +6,7 @@ If there is no file or it is empty, then uses default values.yaml from the modul
 
 ```
 module "metrics_server" {
-  # source = "github.com/makezbs/toolbox/modules/metrics-server"
-  source = "../../../../modules/metrics-server"
+  source = "git::https://github.com/makezbs/toolbox.git//modules/metrics-server?ref=v0.1.0"
 
   name      = basename(path.cwd)
   namespace = "monitoring"
@@ -114,7 +113,7 @@ Plan: 1 to add, 0 to change, 0 to destroy.
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_metrics_server"></a> [metrics\_server](#module\_metrics\_server) | ../../../../modules/metrics-server |  |
+| <a name="module_metrics_server"></a> [metrics\_server](#module\_metrics\_server) | git::https://github.com/makezbs/toolbox.git//modules/metrics-server?ref=v0.1.0 |  |
 
 ## Resources
 

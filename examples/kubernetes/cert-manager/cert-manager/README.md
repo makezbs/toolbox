@@ -8,7 +8,7 @@ At the moment works and tested only with Cloudflare
 
 ```
 module "cert-manager" {
-  source = "../../../../modules/cert-manager"
+  source = "git::https://github.com/makezbs/toolbox.git//modules/cert-manager?ref=v0.1.0"
 
   name      = basename(path.cwd)
   namespace = "cert-manager"
@@ -45,7 +45,6 @@ resource "null_resource" "cluster_issuer" {
     command = "kubectl apply -f cloudflare.yaml"
   }
 }
-
 ```
 
 ## Terraform plan
@@ -157,7 +156,7 @@ Plan: 3 to add, 0 to change, 0 to destroy.
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_cert-manager"></a> [cert-manager](#module\_cert-manager) | ../../../../modules/cert-manager |  |
+| <a name="module_cert-manager"></a> [cert-manager](#module\_cert-manager) | git::https://github.com/makezbs/toolbox.git//modules/cert-manager?ref=v0.1.0 |  |
 
 ## Resources
 

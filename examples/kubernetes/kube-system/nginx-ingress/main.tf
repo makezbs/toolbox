@@ -1,6 +1,5 @@
 module "nginx-ingress" {
-  # source = "github.com/makezbs/toolbox/modules/nginx-ingress"
-  source = "../../../../modules/nginx-ingress"
+  source = "git::https://github.com/makezbs/toolbox.git//modules/nginx-ingress?ref=v0.1.0"
 
   name      = basename(path.cwd)
   namespace = "kube-system"

@@ -1,6 +1,5 @@
 module "query_exporter" {
-  # source = "github.com/makezbs/toolbox/modules/query-exporter"
-  source = "../../../../modules/query-exporter"
+  source = "git::https://github.com/makezbs/toolbox.git//modules/query-exporter?ref=v0.1.0"
 
   set = {}
 

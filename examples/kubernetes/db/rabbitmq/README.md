@@ -6,8 +6,7 @@ If there is no file or it is empty, then uses default values.yaml from the modul
 
 ```
 module "rabbitmq" {
-  # source = "github.com/makezbs/toolbox/modules/rabbitmq"
-  source = "../../../../modules/rabbitmq/"
+  source = "git::https://github.com/makezbs/toolbox.git//modules/rabbitmq?ref=v0.1.0"
 
   set = {
     "replicaCount"        = "1"
@@ -170,7 +169,7 @@ kubectl get secret -n db rabbitmq -o jsonpath="{.data.rabbitmq-password}" | base
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_rabbitmq"></a> [rabbitmq](#module\_rabbitmq) | ../../../../../modules/rabbitmq/ |  |
+| <a name="module_rabbitmq"></a> [rabbitmq](#module\_rabbitmq) | git::https://github.com/makezbs/toolbox.git//modules/rabbitmq?ref=v0.1.0 |  |
 
 ## Resources
 

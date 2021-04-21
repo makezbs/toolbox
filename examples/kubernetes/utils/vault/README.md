@@ -7,8 +7,7 @@ If there is no file or it is empty, then uses default values.yaml from the modul
 
 ```
 module "vault" {
-  # source = "github.com/makezbs/toolbox/modules/vault"
-  source = "../../../../modules/vault"
+  source = "git::https://github.com/makezbs/toolbox.git//modules/vault?ref=v0.1.0"
 
   name      = basename(path.cwd)
   namespace = "utils"
@@ -155,7 +154,7 @@ vault operator unseal # and use 3 of 5 unseal keys from previouse step
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_vault"></a> [vault](#module\_vault) | ../../../../modules/vault |  |
+| <a name="module_vault"></a> [vault](#module\_vault) | git::https://github.com/makezbs/toolbox.git//modules/vault?ref=v0.1.0 |  |
 
 ## Resources
 
