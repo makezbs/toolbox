@@ -5,9 +5,8 @@ The module checks for the existence of the file values.aml and its content.
 If there is no file or it is empty, then uses default values.yaml from the module.
 
 ```
-module "victoria_metrics_single" {
-  # source = "github.com/makezbs/toolbox/modules/kube-state-metrics"
-  source = "../../../../modules/kube-state-metrics"
+module "kube_state_metrics" {
+  source = "git::https://github.com/makezbs/toolbox.git//modules/kube-state-metrics?ref=v0.1.0"
 
   name      = basename(path.cwd)
   namespace = "monitoring"

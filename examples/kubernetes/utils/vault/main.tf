@@ -1,6 +1,5 @@
 module "vault" {
-  # source = "github.com/makezbs/toolbox/modules/vault"
-  source = "../../../../modules/vault"
+  source = "git::https://github.com/makezbs/toolbox.git//modules/vault?ref=v0.1.0"
 
   name      = basename(path.cwd)
   namespace = "utils"

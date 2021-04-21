@@ -7,7 +7,7 @@ If there is no file or it is empty, then uses default values.yaml from the modul
 
 ```
 module "gitlab_runner" {
-  source = "github.com/makezbs/toolbox/modules/gitlab-runner"
+  source = "git::https://github.com/makezbs/toolbox.git//modules/gitlab-runner?ref=v0.1.0"
 
   name      = "gitlab-runner"
   namespace = "utils"
@@ -113,7 +113,7 @@ terraform apply
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_gitlab_runner"></a> [gitlab\_runner](#module\_gitlab\_runner) | ../../../../modules/gitlab-runner |  |
+| <a name="module_gitlab_runner"></a> [gitlab\_runner](#module\_gitlab\_runner) | git::https://github.com/makezbs/toolbox.git//modules/gitlab-runner?ref=v0.1.0 |  |
 
 ## Resources
 

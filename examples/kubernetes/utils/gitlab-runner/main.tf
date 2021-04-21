@@ -1,6 +1,5 @@
 module "gitlab_runner" {
-  # source = "github.com/makezbs/toolbox/modules/gitlab-runner"
-  source = "../../../../modules/gitlab-runner"
+  source = "git::https://github.com/makezbs/toolbox.git//modules/gitlab-runner?ref=v0.1.0"
 
   name      = "gitlab-runner"
   namespace = "utils"

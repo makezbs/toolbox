@@ -6,8 +6,7 @@ If there is no file or it is empty, then uses default values.yaml from the modul
 
 ```
 module "query_exporter" {
-  # source = "github.com/makezbs/toolbox/modules/query-exporter"
-  source = "../../../../modules/query-exporter"
+  source = "git::https://github.com/makezbs/toolbox.git//modules/query-exporter?ref=v0.1.0"
 
   set = {}
 
@@ -130,7 +129,7 @@ Plan: 1 to add, 0 to change, 0 to destroy.
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_query_exporter"></a> [query\_exporter](#module\_query\_exporter) | ../../../../modules/query-exporter |  |
+| <a name="module_query_exporter"></a> [query\_exporter](#module\_query\_exporter) | git::https://github.com/makezbs/toolbox.git//modules/query-exporter?ref=v0.1.0 |  |
 
 ## Resources
 

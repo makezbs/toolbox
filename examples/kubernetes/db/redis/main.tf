@@ -1,6 +1,5 @@
 module "redis" {
-  # source = "github.com/makezbs/toolbox/modules/redis"
-  source = "../../../../modules/redis/"
+  source = "git::https://github.com/makezbs/toolbox.git//modules/redis?ref=v0.1.0"
 
   name      = basename(path.cwd)
   namespace = "db"

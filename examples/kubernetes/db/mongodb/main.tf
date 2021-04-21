@@ -1,5 +1,5 @@
 module "mongodb" {
-  source = "../../../../modules/mongodb/"
+  source = "git::https://github.com/makezbs/toolbox.git//modules/mongodb?ref=v0.1.0"
 
   set = {
     "architecture"          = "replicaset",

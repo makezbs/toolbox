@@ -4,7 +4,7 @@ variable "smtp_password" {
 }
 
 module "grafana" {
-  source = "../../../../modules/grafana/"
+  source = "git::https://github.com/makezbs/toolbox.git//modules/grafana?ref=v0.1.0"
 
   set = {
     "plugins[0]"                                           = "redis-datasource",
