@@ -1,0 +1,16 @@
+exporter_config: |
+  databases:
+    db1:
+      dsn: env:DB_CONNECTION_STRING
+
+  metrics:
+    metrics1:
+      type: gauge
+      description: Blocks count
+
+  queries:
+    query1:
+      interval: 5
+      databases: [db1]
+      metrics: [metric1]
+      sql: SELECT random() / 1000000000000000 AS metric1
