@@ -1,6 +1,9 @@
 # Makezbs Terraform modules collection
 
 [![License](https://img.shields.io/badge/License-Apache%202.0-blue.svg)](https://opensource.org/licenses/Apache-2.0)
+[![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/makezbs/toolbox)](https://github.com/makezbs/toolbox/releases/latest)
+![Github Release date](https://img.shields.io/github/release-date/makezbs/toolbox)
+![GitHub Last commit](https://img.shields.io/github/last-commit/makezbs/toolbox)
 
 The code is provided as-is with no warranties.
 
