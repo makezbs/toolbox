@@ -1,0 +1,35 @@
+apiVersion: "acid.zalan.do/v1"
+kind: "postgresql"
+metadata:
+  name: "pgsql-13"
+  namespace: "db"
+  labels:
+    team: myTeam
+
+spec:
+  allowedSourceRanges: null
+  databases:
+    myDatabase: mySuperuser
+  enableConnectionPooler: true
+  enableLogicalBackup: true
+  enableShmVolume: true
+  logicalBackupSchedule: 00 0 * * *
+  numberOfInstances: 3
+  postgresql:
+    parameters:
+      hot_standby_feedback: "on"
+      max_standby_archive_delay: 3000s
+      max_standby_streaming_delay: 3000s
+    version: "13"
+  resources:
+    limits:
+      cpu: "2"
+      memory: 4096Mi
+    requests:
+      cpu: 200m
+      memory: 512Mi
+  teamId: myTeam
+  users:
+    mySuperuser: []
+  volume:
+    size: 50Gi
