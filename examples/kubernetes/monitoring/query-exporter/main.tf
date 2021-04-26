@@ -1,5 +1,5 @@
 module "query_exporter" {
-  source = "git::https://github.com/makezbs/toolbox.git//modules/query-exporter?ref=v0.1.0"
+  source = "git::https://github.com/makezbs/toolbox.git//modules/query-exporter?ref=v0.2.0"
 
   set = {}
 

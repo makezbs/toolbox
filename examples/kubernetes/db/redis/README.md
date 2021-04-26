@@ -6,7 +6,7 @@ If there is no file or it is empty, then uses default values.yaml from the modul
 
 ```
 module "redis" {
-  source = "git::https://github.com/makezbs/toolbox.git//modules/redis?ref=v0.1.0"
+  source = "git::https://github.com/makezbs/toolbox.git//modules/redis?ref=v0.2.0"
 
   name      = basename(path.cwd)
   namespace = "db"
@@ -157,7 +157,7 @@ kubectl get secret -n db redis -o jsonpath="{.data.redis-password}" | base64 --d
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_redis"></a> [redis](#module\_redis) | git::https://github.com/makezbs/toolbox.git//modules/redis?ref=v0.1.0 |  |
+| <a name="module_redis"></a> [redis](#module\_redis) | git::https://github.com/makezbs/toolbox.git//modules/redis?ref=v0.2.0 |  |
 
 ## Resources
 

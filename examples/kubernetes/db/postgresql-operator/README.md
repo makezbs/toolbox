@@ -6,7 +6,7 @@ If there is no file or it is empty, then uses default values.yaml from the modul
 
 ```
 module "postgresql_operator" {
-  source = "../../../../modules/postgres-operator/"
+  source = "git::https://github.com/makezbs/toolbox.git//modules/postgres-operator?ref=v0.2.0"
 
   name      = basename(path.cwd)
   namespace = "db"
@@ -70,7 +70,7 @@ resource "kubernetes_secret" "this" {
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_postgresql_operator"></a> [postgresql\_operator](#module\_postgresql\_operator) | ../../../../modules/postgres-operator/ |  |
+| <a name="module_postgresql_operator"></a> [postgresql\_operator](#module\_postgresql\_operator) | git::https://github.com/makezbs/toolbox.git//modules/postgres-operator?ref=v0.2.0 |  |
 
 ## Resources
 

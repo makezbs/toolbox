@@ -6,7 +6,7 @@ If there is no file or it is empty, then uses default values.yaml from the modul
 
 ```
 module "mongodb" {
-  source = "git::https://github.com/makezbs/toolbox.git//modules/mongodb?ref=v0.1.0"
+  source = "git::https://github.com/makezbs/toolbox.git//modules/mongodb?ref=v0.2.0"
 
   set = {
     "architecture"          = "replicaset",
@@ -39,7 +39,7 @@ module "mongodb" {
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_mongodb"></a> [mongodb](#module\_mongodb) | git::https://github.com/makezbs/toolbox.git//modules/mongodb?ref=v0.1.0 |  |
+| <a name="module_mongodb"></a> [mongodb](#module\_mongodb) | git::https://github.com/makezbs/toolbox.git//modules/mongodb?ref=v0.2.0 |  |
 
 ## Resources
 

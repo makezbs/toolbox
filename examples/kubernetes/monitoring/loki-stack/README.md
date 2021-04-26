@@ -8,7 +8,7 @@ If there is no file or it is empty, then uses default values.yaml from the modul
 
 ```
 module "loki_stack" {
-  source = "git::https://github.com/makezbs/toolbox.git//modules/loki-stack?ref=v0.1.0"
+  source = "git::https://github.com/makezbs/toolbox.git//modules/loki-stack?ref=v0.2.0"
 
   set = {
     "promtail.enabled"         = "true",
@@ -194,7 +194,7 @@ terraform apply
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_loki_stack"></a> [loki\_stack](#module\_loki\_stack) | git::https://github.com/makezbs/toolbox.git//modules/loki-stack?ref=v0.1.0 |  |
+| <a name="module_loki_stack"></a> [loki\_stack](#module\_loki\_stack) | git::https://github.com/makezbs/toolbox.git//modules/loki-stack?ref=v0.2.0 |  |
 
 ## Resources
 

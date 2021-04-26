@@ -15,22 +15,25 @@ Please refer to Terraform's [documentation](https://www.terraform.io/docs/) to g
 Once Terraform is set up properly, you can try one of the modules:
 
 ```
-|-- cert-manager
-|-- gitlab-runner
-|-- grafana
-|-- kube-state-metrics
-|-- loki-stack
-|-- metrics-server
-|-- mongodb
-|-- nginx-ingress
-|-- node-exporter
-|-- query-exporter
-|-- rabbitmq
-|-- redis
-|-- vault
-|-- victoria-metrics-agent
-|-- victoria-metrics-alert
-|-- victoria-metrics-single
+├── _bootstrap
+├── cert-manager
+├── external-dns
+├── gitlab-runner
+├── grafana
+├── kube-state-metrics
+├── loki-stack
+├── metrics-server
+├── mongodb
+├── nginx-ingress
+├── node-exporter
+├── postgres-operator
+├── query-exporter
+├── rabbitmq
+├── redis
+├── vault
+├── victoria-metrics-agent
+├── victoria-metrics-alert
+└── victoria-metrics-single
 ```
 
 Simple example to setup metrics-server in you Kubernetes cluster:

@@ -1,5 +1,5 @@
 module "rabbitmq" {
-  source = "git::https://github.com/makezbs/toolbox.git//modules/rabbitmq?ref=v0.1.0"
+  source = "git::https://github.com/makezbs/toolbox.git//modules/rabbitmq?ref=v0.2.0"
 
   set = {
     "replicaCount"        = "1"

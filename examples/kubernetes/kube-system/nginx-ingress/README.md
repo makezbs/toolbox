@@ -7,7 +7,7 @@ If there is no file or it is empty, then uses default values.yaml from the modul
 
 ```
 module "nginx-ingress" {
-  source = "git::https://github.com/makezbs/toolbox.git//modules/nginx-ingress?ref=v0.1.0"
+  source = "git::https://github.com/makezbs/toolbox.git//modules/nginx-ingress?ref=v0.2.0"
 
   name      = basename(path.cwd)
   namespace = "kube-system"
@@ -120,7 +120,7 @@ terraform apply
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_nginx-ingress"></a> [nginx-ingress](#module\_nginx-ingress) | git::https://github.com/makezbs/toolbox.git//modules/nginx-ingress?ref=v0.1.0 |  |
+| <a name="module_nginx-ingress"></a> [nginx-ingress](#module\_nginx-ingress) | git::https://github.com/makezbs/toolbox.git//modules/nginx-ingress?ref=v0.2.0 |  |
 
 ## Resources
 

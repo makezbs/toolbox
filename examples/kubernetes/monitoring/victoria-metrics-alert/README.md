@@ -6,7 +6,7 @@ If there is no file or it is empty, then uses default values.yaml from the modul
 
 ```
 module "victoria_metrics_alert" {
-  source = "git::https://github.com/makezbs/toolbox.git//modules/victoria-metrics-alert?ref=v0.1.0"
+  source = "git::https://github.com/makezbs/toolbox.git//modules/victoria-metrics-alert?ref=v0.2.0"
 
   set = {
     "server.datasource.url"            = "http://victoria-metrics-single:8428",
@@ -183,7 +183,7 @@ Plan: 1 to add, 0 to change, 0 to destroy.
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_victoria_metrics_alert"></a> [victoria\_metrics\_alert](#module\_victoria\_metrics\_alert) | git::https://github.com/makezbs/toolbox.git//modules/victoria-metrics-alert?ref=v0.1.0 |  |
+| <a name="module_victoria_metrics_alert"></a> [victoria\_metrics\_alert](#module\_victoria\_metrics\_alert) | git::https://github.com/makezbs/toolbox.git//modules/victoria-metrics-alert?ref=v0.2.0 |  |
 
 ## Resources
 

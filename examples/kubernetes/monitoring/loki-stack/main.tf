@@ -1,5 +1,5 @@
 module "loki_stack" {
-  source = "git::https://github.com/makezbs/toolbox.git//modules/loki-stack?ref=v0.1.0"
+  source = "git::https://github.com/makezbs/toolbox.git//modules/loki-stack?ref=v0.2.0"
 
   set = {
     "promtail.enabled"         = "true",

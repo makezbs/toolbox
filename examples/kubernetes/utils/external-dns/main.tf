@@ -1,5 +1,6 @@
 module "external_dns" {
-  source = "../../../../modules/external-dns"
+
+  source = "git::https://github.com/makezbs/toolbox.git//modules/external-dns?ref=v0.2.0"
 
   name      = basename(path.cwd)
   namespace = "utils"

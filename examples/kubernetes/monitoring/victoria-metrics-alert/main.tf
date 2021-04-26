@@ -1,5 +1,5 @@
 module "victoria_metrics_alert" {
-  source = "git::https://github.com/makezbs/toolbox.git//modules/victoria-metrics-alert?ref=v0.1.0"
+  source = "git::https://github.com/makezbs/toolbox.git//modules/victoria-metrics-alert?ref=v0.2.0"
 
   set = {
     "server.datasource.url"            = "http://victoria-metrics-single:8428",

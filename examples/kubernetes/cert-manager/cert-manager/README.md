@@ -8,7 +8,7 @@ At the moment works and tested only with Cloudflare
 
 ```
 module "cert-manager" {
-  source = "git::https://github.com/makezbs/toolbox.git//modules/cert-manager?ref=v0.1.0"
+  source = "git::https://github.com/makezbs/toolbox.git//modules/cert-manager?ref=v0.2.0"
 
   name      = basename(path.cwd)
   namespace = "cert-manager"
@@ -156,7 +156,7 @@ Plan: 3 to add, 0 to change, 0 to destroy.
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_cert-manager"></a> [cert-manager](#module\_cert-manager) | git::https://github.com/makezbs/toolbox.git//modules/cert-manager?ref=v0.1.0 |  |
+| <a name="module_cert-manager"></a> [cert-manager](#module\_cert-manager) | git::https://github.com/makezbs/toolbox.git//modules/cert-manager?ref=v0.2.0 |  |
 
 ## Resources
 

@@ -6,7 +6,7 @@ If there is no file or it is empty, then uses default values.yaml from the modul
 
 ```
 module "victoria_metrics_single" {
-  source = "git::https://github.com/makezbs/toolbox.git//modules/victoria-metrics-single?ref=v0.1.0"
+  source = "git::https://github.com/makezbs/toolbox.git//modules/victoria-metrics-single?ref=v0.2.0"
 
   name      = basename(path.cwd)
   namespace = "monitoring"
@@ -115,7 +115,7 @@ Plan: 1 to add, 0 to change, 0 to destroy.
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_victoria_metrics_single"></a> [victoria\_metrics\_single](#module\_victoria\_metrics\_single) | git::https://github.com/makezbs/toolbox.git//modules/victoria-metrics-single?ref=v0.1.0 |  |
+| <a name="module_victoria_metrics_single"></a> [victoria\_metrics\_single](#module\_victoria\_metrics\_single) | git::https://github.com/makezbs/toolbox.git//modules/victoria-metrics-single?ref=v0.2.0 |  |
 
 ## Resources
 

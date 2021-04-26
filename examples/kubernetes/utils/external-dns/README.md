@@ -7,7 +7,7 @@ If there is no file or it is empty, then uses default values.yaml from the modul
 
 ```
 module "external-dns" {
-  source = "../../../../modules/external-dns"
+  source = "git::https://github.com/makezbs/toolbox.git//modules/external-dns?ref=v0.2.0"
 
   name      = basename(path.cwd)
   namespace = "utils"
@@ -185,7 +185,7 @@ Plan: 3 to add, 0 to change, 0 to destroy.
 
 | Name | Source | Version |
 |------|--------|---------|
-| <a name="module_external-dns"></a> [external-dns](#module\_external-dns) | ../../../../modules/external-dns |  |
+| <a name="module_external-dns"></a> [external-dns](#module\_external-dns) | git::https://github.com/makezbs/toolbox.git//modules/external-dns?ref=v0.2.0 |  |
 
 ## Resources
 

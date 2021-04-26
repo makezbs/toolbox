@@ -1,5 +1,5 @@
 module "postgresql_operator" {
-  source = "../../../../modules/postgres-operator/"
+  source = "git::https://github.com/makezbs/toolbox.git//modules/postgres-operator?ref=v0.2.0"
 
   name      = basename(path.cwd)
   namespace = "db"
