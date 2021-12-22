@@ -2,7 +2,7 @@ locals {
   set = merge(local.set_defaults, var.set)
   set_defaults = {
     "nameOverride"     = "_bootstrap",
-    "fullnameOverride" = _bootstrap,
+    "fullnameOverride" = "_bootstrap",
   }
   set_sensitive = merge(local.set_sensitive_defaults, var.set_sensitive)
   set_sensitive_defaults = {
