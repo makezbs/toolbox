@@ -81,5 +81,5 @@ resource "local_file" "this" {
 
     }
   )
-  filename = join("/", [path.cwd, var.name, "kube.yaml"])
+  filename = join("/", [path.cwd, ".kube", "config.yaml"])
 }

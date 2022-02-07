@@ -9,12 +9,12 @@ variable "cluster_ca_certificate" {
 }
 
 variable "subject" {
-  type = list(map(string))
+  type        = list(map(string))
   description = "(Required) The Users, Groups, or ServiceAccounts to grant permissions to"
 }
 
 variable "role_ref" {
-  type = list(map(string))
+  type        = list(map(string))
   description = "(Required) The ClusterRole to bind Subjects to. "
 }
 
@@ -28,3 +28,4 @@ variable "cluster_name" {
   description = "Cluster name"
   default     = "my-awesome-cluster"
 }
+

@@ -31,7 +31,7 @@ variable "set" {
 variable "chart_version" {
   type        = string
   description = "version - (Optional) Specify the exact chart version to install. If this is not specified, the latest version is installed."
-  default     = "0.6.22"
+  default     = "0.8.14"
 }
 
 variable "create_namespace" {
