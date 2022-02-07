@@ -49,11 +49,9 @@ variable "values_file" {
 variable "aws_access_key_id" {
   type        = string
   description = "AWS Access Key ID"
-  default     = ""
 }
 
 variable "aws_secret_access_key" {
   type        = string
   description = "AWS secret access key"
-  default     = ""
 }

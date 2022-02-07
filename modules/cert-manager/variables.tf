@@ -49,5 +49,4 @@ variable "values_file" {
 variable "cloudflare_api_token" {
   type        = string
   description = "Cloudflare API token to work with DNS and Zone"
-  default     = ""
 }
