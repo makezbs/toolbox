@@ -48,26 +48,31 @@ variable "class" {
 }
 
 variable "token_ttl" {
-  type    = number
-  default = 0
+  type        = number
+  default     = 0
+  description = "(Optional) The TTL period of this token"
 }
 
 variable "token_renew_min_lease" {
-  type    = number
-  default = 0
+  type        = number
+  default     = 0
+  description = "(Optional) The minimal lease to renew this token"
 }
 
 variable "token_renew_increment" {
-  type    = number
-  default = 0
+  type        = number
+  default     = 0
+  description = "(Optional) The renew increment"
 }
 
 variable "token_num_uses" {
-  type    = number
-  default = 0
+  type        = number
+  default     = 0
+  description = "(Optional) The number of allowed uses of this token"
 }
 
 variable "token_renewable" {
-  type    = bool
-  default = true
+  type        = bool
+  default     = true
+  description = "(Optional) Flag to allow to renew this token"
 }

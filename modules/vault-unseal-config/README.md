@@ -38,15 +38,15 @@ No modules.
 | <a name="input_name"></a> [name](#input\_name) | (Required) The name of the policy | `string` | `"autounseal"` | no |
 | <a name="input_namespace"></a> [namespace](#input\_namespace) | (Optional) Namespace defines the space within which name of the secret must be unique. | `string` | `"default"` | no |
 | <a name="input_policy"></a> [policy](#input\_policy) | (Required) String containing a Vault policy | `string` | `"path \"transit/encrypt/autounseal\" {\n  capabilities = [ \"update\" ]\n}\npath \"transit/decrypt/autounseal\" {\n  capabilities = [ \"update\" ]\n}\n"` | no |
-| <a name="input_token_num_uses"></a> [token\_num\_uses](#input\_token\_num\_uses) | n/a | `number` | `0` | no |
-| <a name="input_token_renew_increment"></a> [token\_renew\_increment](#input\_token\_renew\_increment) | n/a | `number` | `0` | no |
-| <a name="input_token_renew_min_lease"></a> [token\_renew\_min\_lease](#input\_token\_renew\_min\_lease) | n/a | `number` | `0` | no |
-| <a name="input_token_renewable"></a> [token\_renewable](#input\_token\_renewable) | n/a | `bool` | `true` | no |
-| <a name="input_token_ttl"></a> [token\_ttl](#input\_token\_ttl) | n/a | `number` | `0` | no |
+| <a name="input_token_num_uses"></a> [token\_num\_uses](#input\_token\_num\_uses) | (Optional) The number of allowed uses of this token | `number` | `0` | no |
+| <a name="input_token_renew_increment"></a> [token\_renew\_increment](#input\_token\_renew\_increment) | (Optional) The renew increment | `number` | `0` | no |
+| <a name="input_token_renew_min_lease"></a> [token\_renew\_min\_lease](#input\_token\_renew\_min\_lease) | (Optional) The minimal lease to renew this token | `number` | `0` | no |
+| <a name="input_token_renewable"></a> [token\_renewable](#input\_token\_renewable) | (Optional) Flag to allow to renew this token | `bool` | `true` | no |
+| <a name="input_token_ttl"></a> [token\_ttl](#input\_token\_ttl) | (Optional) The TTL period of this token | `number` | `0` | no |
 | <a name="input_use_kubernetes"></a> [use\_kubernetes](#input\_use\_kubernetes) | (Optional) Handler to use kubernetes and create secret with VAULT\_TOKEN | `bool` | `false` | no |
 
 ## Outputs
 
 | Name | Description |
 |------|-------------|
-| <a name="output_autounseal_token"></a> [autounseal\_token](#output\_autounseal\_token) | n/a |
+| <a name="output_autounseal_token"></a> [autounseal\_token](#output\_autounseal\_token) | Vault token with autounseal permissions |
