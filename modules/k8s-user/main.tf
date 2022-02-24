@@ -13,7 +13,7 @@ resource "tls_cert_request" "this" {
   }
 }
 
-resource "kubernetes_certificate_signing_request" "this" {
+resource "kubernetes_certificate_signing_request_v1" "this" {
   metadata {
     name = var.name
   }
@@ -21,21 +21,20 @@ resource "kubernetes_certificate_signing_request" "this" {
     usages = [
       "digital signature",
       "key encipherment",
-      "client auth",
-      "server auth"
+      "client auth"
     ]
-    request = tls_cert_request.this.cert_request_pem
+    request     = tls_cert_request.this.cert_request_pem
+    signer_name = "kubernetes.io/kube-apiserver-client"
   }
   auto_approve = true
 }
-
 
 resource "kubernetes_secret" "this" {
   metadata {
     name = var.name
   }
   data = {
-    "tls.crt" = kubernetes_certificate_signing_request.this.certificate
+    "tls.crt" = kubernetes_certificate_signing_request_v1.this.certificate
     "tls.key" = tls_private_key.this.private_key_pem
   }
   type = "kubernetes.io/tls"
@@ -73,7 +72,7 @@ resource "local_file" "this" {
   content = templatefile(
     join("/", [path.module, "templates/kubeconfig.tmpl"]), {
       cluster_ca_certificate = base64encode(var.cluster_ca_certificate)
-      client_certificate     = base64encode(kubernetes_certificate_signing_request.this.certificate)
+      client_certificate     = base64encode(kubernetes_certificate_signing_request_v1.this.certificate)
       client_key             = base64encode(tls_private_key.this.private_key_pem)
       name                   = var.name
       cluster_name           = var.cluster_name
