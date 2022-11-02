@@ -4,7 +4,6 @@ resource "tls_private_key" "this" {
 }
 
 resource "tls_cert_request" "this" {
-  key_algorithm   = "RSA"
   private_key_pem = tls_private_key.this.private_key_pem
 
   subject {

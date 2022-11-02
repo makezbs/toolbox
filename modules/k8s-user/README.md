@@ -2,18 +2,18 @@
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.1 |
-| <a name="requirement_kubernetes"></a> [kubernetes](#requirement\_kubernetes) | ~> 2.8 |
-| <a name="requirement_local"></a> [local](#requirement\_local) | ~> 2.1 |
-| <a name="requirement_tls"></a> [tls](#requirement\_tls) | ~> 3.1 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.2 |
+| <a name="requirement_kubernetes"></a> [kubernetes](#requirement\_kubernetes) | ~> 2.15 |
+| <a name="requirement_local"></a> [local](#requirement\_local) | ~> 2.2 |
+| <a name="requirement_tls"></a> [tls](#requirement\_tls) | ~> 4.0 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_kubernetes"></a> [kubernetes](#provider\_kubernetes) | ~> 2.8 |
-| <a name="provider_local"></a> [local](#provider\_local) | ~> 2.1 |
-| <a name="provider_tls"></a> [tls](#provider\_tls) | ~> 3.1 |
+| <a name="provider_kubernetes"></a> [kubernetes](#provider\_kubernetes) | ~> 2.15 |
+| <a name="provider_local"></a> [local](#provider\_local) | ~> 2.2 |
+| <a name="provider_tls"></a> [tls](#provider\_tls) | ~> 4.0 |
 
 ## Modules
 
