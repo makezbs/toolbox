@@ -31,6 +31,7 @@ resource "vault_token" "this" {
   renew_min_lease = var.token_renew_min_lease
   renew_increment = var.token_renew_increment
   num_uses        = var.token_num_uses
+  no_parent       = true
 }
 
 resource "kubernetes_secret" "this" {
