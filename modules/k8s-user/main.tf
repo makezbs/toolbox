@@ -28,7 +28,7 @@ resource "kubernetes_certificate_signing_request_v1" "this" {
   auto_approve = true
 }
 
-resource "kubernetes_secret" "this" {
+resource "kubernetes_secret_v1" "this" {
   metadata {
     name = var.name
   }
@@ -39,7 +39,14 @@ resource "kubernetes_secret" "this" {
   type = "kubernetes.io/tls"
 }
 
-resource "kubernetes_cluster_role_binding" "this" {
+
+resource "kubernetes_service_account_v1" "this" {
+  metadata {
+    name = var.name
+  }
+}
+
+resource "kubernetes_cluster_role_binding_v1" "this" {
   metadata {
     name = var.name
   }
@@ -65,14 +72,20 @@ resource "kubernetes_cluster_role_binding" "this" {
       api_group = subject.value["api_group"]
     }
   }
+  # TODO: Rewrite this part
+  subject {
+    kind = "ServiceAccount"
+    name = var.name
+  }
 }
 
-resource "local_file" "this" {
+resource "local_file" "kube_config" {
   content = templatefile(
     join("/", [path.module, "templates/kubeconfig.tmpl"]), {
       cluster_ca_certificate = base64encode(var.cluster_ca_certificate)
       client_certificate     = base64encode(kubernetes_certificate_signing_request_v1.this.certificate)
       client_key             = base64encode(tls_private_key.this.private_key_pem)
+      client_token           = data.kubernetes_secret_v1.this.data.token
       name                   = var.name
       cluster_name           = var.cluster_name
       server                 = var.kubernetes_server_url
@@ -80,4 +93,18 @@ resource "local_file" "this" {
     }
   )
   filename = join("/", [path.cwd, ".kube", "config.yaml"])
+
+  depends_on = [kubernetes_secret_v1.this]
+}
+
+data "kubernetes_secret_v1" "this" {
+  metadata {
+    name = kubernetes_service_account_v1.this.default_secret_name
+  }
+  depends_on = [kubernetes_service_account_v1.this]
+}
+
+resource "local_file" "token" {
+  content  = data.kubernetes_secret_v1.this.data.token
+  filename = join("/", [path.cwd, ".kube", "token"])
 }

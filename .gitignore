@@ -32,3 +32,4 @@ examples/**/.terraform.lock.hcl
 clients/*
 
 .DS_Store
+.idea
